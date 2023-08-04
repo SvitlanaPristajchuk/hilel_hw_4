@@ -25,27 +25,12 @@ sauceKindMayoPrice = 3;
 
 
 userChoice = prompt(`Would you like a ${hamburgerChoice} or a ${cheesburgerChoice}`)
-    //console.log(userChoice)
-
-
-/*if (userChoice !== null &&
-    userChoice.replaceAll(` `, ``) !== `` &&
-    (userChoice.replaceAll(` `, ``).toLowerCase() === hamburgerChoice ||
-        userChoice.replaceAll(` `, ``).toLowerCase() === cheesburgerChoice)
-) {
-    if (userChoice.replaceAll(` `, ``).toLowerCase() === hamburgerChoice) {
-        price += hamburgerPrice;
-    } else if (userChoice.replaceAll(` `, ``).toLowerCase() === cheesburgerChoice) {
-        price += cheesburgerPrice
-    }
-} else {
-    userChoice = hamburgerChoice;
-    price += hamburgerPrice
-}*/
 
 
 
-// choice
+
+
+
 
 if (userChoice !== null) {
     userChoice = userChoice.replaceAll(` `, ``).toLowerCase()
@@ -57,7 +42,7 @@ if (userChoice === cheesburgerChoice) {
     price += hamburgerPrice
 }
 
-// doubleCheese
+
 if (userChoice === cheesburgerChoice) {
     doubleCheese = confirm(`Would you like to add double cheese?`);
     if (doubleCheese) {
@@ -66,7 +51,7 @@ if (userChoice === cheesburgerChoice) {
 
 }
 
-// potato
+
 potatoChoice = confirm(`Would you like potato?`)
 if (potatoChoice) {
     potatoSize = prompt(`Choose potato size: ${potatoSizeSmall}/${potatoSizeMiddle}/${potatoSizeBig}`)
@@ -82,7 +67,6 @@ if (potatoChoice) {
     }
 }
 
-// sauceChoice
 
 sauceChoice = confirm(`Would you like sauce?`)
 
@@ -102,12 +86,11 @@ if (sauceChoice) {
 document.write(`<h2>Your order:</h2>
 	<ul>
 		<li>Bulka 🍔: ${userChoice} </li>
-		<li>Potato 🍟: ${potatoSize} </li>
-		<li>Sauce 🧂: ${sauceKind}</li>
-	</ul>
-
-	<p>Price: $ ${price} </p>
-`);
+  		${potatoChoice ? `<li>Potato 🍟: ${potatoSize} </li>` : ``}
+  		${sauceChoice ? `<li>Sauce 🧂: ${sauceKind}</li>` : ``}
+  	</ul>
+  	<p>Price: $ ${price} </p>
+  `);
 
 
 
